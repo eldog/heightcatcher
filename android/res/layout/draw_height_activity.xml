@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_gravity="center_horizontal">
+	<org.rhok.android.DrawHeightView
+		xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/image"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_weight="1" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:layout_gravity="center_horizontal"
+		android:layout_weight="0"
+		padding="5dp">
+		<ToggleButton android:id="@+id/ref_XY_1"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textOn="Ref 1" android:textOff="Ref 1" android:checked="true"
+			margin="5dp" android:layout_weight="1"
+			android:textColor="#133CAC"/>
+		<ToggleButton android:id="@+id/ref_XY_2"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textOn="Ref 2" android:textOff="Ref 2" android:checked="false"
+			margin="5dp" android:layout_weight="1"
+			android:textColor="#062270"/>
+		<ToggleButton android:id="@+id/per_XY_1"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textOn="Per 1" android:textOff="Per 1" android:checked="false"
+			margin="5dp" android:layout_weight="1" 
+			android:textColor="#259433"/>
+		<ToggleButton android:id="@+id/per_XY_2"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textOn="Per 2" android:textOff="Per 2" android:checked="false"
+			margin="5dp" android:layout_weight="1"
+			android:textColor="#008111"/>
+		<Button android:id="@+id/draw_done_button"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="Done" android:layout_gravity="center_horizontal"
+			android:enabled="false" margin="5dp" android:layout_weight="1"/>
+	</LinearLayout>
+
+</LinearLayout>

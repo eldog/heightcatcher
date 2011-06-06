@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:layout_gravity="center_horizontal">
+  <Button
+  android:id="@+id/capture_height_button"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:text="Capture Height"
+  android:textSize="20dp"
+  android:layout_weight="1"
+  android:layout_margin="50dp"
+  
+  android:drawableLeft="@drawable/tape_measure"
+  />
+  <Button
+  android:id="@+id/upload_height_button"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:text="Upload Heights" 
+  android:textSize="20dp"
+  android:layout_weight="1"
+  android:layout_margin="50dp"
+  android:drawableLeft="@drawable/upload"
+  />
+</LinearLayout>

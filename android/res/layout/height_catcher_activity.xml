@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:scrollbars="vertical"
+   	android:scrollbarAlwaysDrawVerticalTrack="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:scrollbars="vertical"
+   	android:scrollbarAlwaysDrawVerticalTrack="true"
+	>
+	
+	<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Name"
+	android:padding="5dp"
+	/>
+	<EditText
+	android:id="@+id/name_edit_text"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:inputType="textPersonName"
+	/>
+	<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Age"
+	android:padding="5dp"
+	/>
+	<DatePicker
+	android:id="@+id/age_date_picker"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	/>
+	<Button android:id="@+id/camera_launch_button"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:text="@string/camera_launch_text" 
+		android:layout_marginTop="20dp"/>
+	<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	>
+	<TextView
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Height:"
+	android:padding="5dp"
+	android:layout_marginBottom="20dp"/>
+	<TextView
+	android:id="@+id/height_text_view"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Not Set"
+	android:padding="5dp"
+	/>
+	
+	</LinearLayout>
+	<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Weight (kg)"
+	android:padding="5dp"
+	/>
+	<EditText
+	android:id="@+id/weight_edit_text"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:inputType="numberDecimal"
+	/>
+	<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Reference Object"
+	android:padding="5dp"
+	/>
+	<Spinner
+	android:id="@+id/reference_spinner"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	/>
+	<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Location"
+	android:padding="5dp"
+	/>
+	
+	<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	>
+	<Button
+	android:id="@+id/get_location_button"
+	android:layout_width="150dp"
+	android:layout_height="wrap_content"
+	android:padding="5dp"
+	android:drawablePadding="5dp"
+	android:text="Get Location"
+	
+	/>
+	<TextView
+	android:id="@+id/location_text_view"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Not Set"
+	android:padding="5dp"/>
+	
+	</LinearLayout>
+	<Button 
+	android:id="@+id/calculate_BMI_button"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Calculate BMI and Finish"
+	android:drawableLeft="@drawable/calculator"
+	android:padding="30dp"
+	android:layout_marginTop="20dp"
+	/>
+</LinearLayout>
+</ScrollView>

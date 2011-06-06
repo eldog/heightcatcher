@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Height Catcher</string>
+    
+    <!-- HeightCatcherActivity -->
+    <string name="camera_launch_text">Measure Height</string>
+    <string name="edit_photo_text">Mark Heights</string>
+</resources>
