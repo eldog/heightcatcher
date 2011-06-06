@@ -11,7 +11,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.BitmapFactory.Options;
 import android.os.Bundle;
-import android.util.Config;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -211,6 +210,7 @@ public class ReferenceHeightActivity extends Activity
         return image;
     }
 
+    @SuppressWarnings("unused")
     private void debugToToastAndLog(String logMessage)
     {
         Log.d(TAG, logMessage);
@@ -218,6 +218,7 @@ public class ReferenceHeightActivity extends Activity
                 Toast.LENGTH_LONG).show();
     }
 
+    @SuppressWarnings("unused")
     private void errorToToastAndLog(String errorMessage)
     {
         Log.e(TAG, errorMessage);

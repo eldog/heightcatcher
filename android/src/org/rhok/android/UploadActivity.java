@@ -25,6 +25,7 @@ public class UploadActivity extends Activity
     private HeightCatcherDB mDb;
     
 
+    @SuppressWarnings("unchecked")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -43,6 +44,7 @@ public class UploadActivity extends Activity
         }
     }
 
+    @SuppressWarnings("unused")
     private void errorToLogAndToast(String message)
     {
         Log.e(TAG, message);

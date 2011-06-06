@@ -4,8 +4,9 @@
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	<application android:icon="@drawable/tape_measure" android:label="@string/app_name">
-
+	<application android:icon="@drawable/tape_measure"
+	 android:label="@string/app_name"
+	 android:theme="@style/CustomTheme">
 		<activity android:name=".HeightCatcherActivity"
 			android:label="@string/app_name" 
 			android:screenOrientation="portrait">
@@ -16,12 +17,13 @@
 		</activity>
 		<activity android:name="UploadActivity"
 			android:label="@string/app_name" 
-			android:screenOrientation="portrait">
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar">
 		</activity>
 		<activity android:name="MainMenuActivity"
 			android:label="@string/app_name" 
-			android:screenOrientation="portrait">
-			
+			android:screenOrientation="portrait"
+			>
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />

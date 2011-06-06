@@ -5,6 +5,18 @@
   android:layout_height="fill_parent"
   android:orientation="vertical"
   android:layout_gravity="center_horizontal">
+   <LinearLayout
+        style="@style/TitleBar">
+        <TextView
+            style="@style/TitleText"
+            android:text="@string/app_name"
+            android:layout_weight="1" />
+        <ImageView
+            style="@style/TitleBarLogo"
+            android:src="@drawable/tape_measure"
+            android:layout_weight="1"
+            />
+  </LinearLayout>
   <Button
   android:id="@+id/capture_height_button"
   android:layout_width="fill_parent"

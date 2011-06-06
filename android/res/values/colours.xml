@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title_background">#D2691E</color>
+    <color name="title_text">#ffffffff</color>
+    <color name="foreground1">#ff355689</color>
+    <color name="footer_text">#ffffffff</color>
+    <color name="audio_background">#ffe0e0e0</color>
+</resources>

@@ -42,6 +42,7 @@ public class HeightCatcherActivity extends Activity
     private Location location;
 
     private Button cameraLaunchButton;
+    private Button editPointsButton;
     private Spinner referenceSpinner;
     private TextView heightTextView;
     private TextView locationTextView;
@@ -59,6 +60,17 @@ public class HeightCatcherActivity extends Activity
     private float[] coords;
 
     private HeightCatcherDB mDb;
+
+    private OnClickListener editPointsListener = new OnClickListener()
+    {
+
+        public void onClick(View v)
+        {
+
+            launchDrawHeightActivity();
+
+        }
+    };
 
     private OnClickListener getLocationListener = new OnClickListener()
     {
@@ -81,8 +93,8 @@ public class HeightCatcherActivity extends Activity
             Log.d(TAG, "Location changed " + newLocation.getLatitude() + " "
                     + newLocation.getLongitude());
             location = newLocation;
-            locationTextView.setText(String.format("Lat: %.2f Long: %.2f", location
-                    .getLatitude(), location.getLongitude()));
+            locationTextView.setText(String.format("Lat: %.2f Long: %.2f",
+                    location.getLatitude(), location.getLongitude()));
             lm.removeUpdates(this);
         }
 
@@ -128,6 +140,22 @@ public class HeightCatcherActivity extends Activity
         }
     };
 
+    private void launchDrawHeightActivity()
+    {
+        if (!TextUtils.isEmpty(imagePath))
+        {
+            Intent intent = new Intent(getApplicationContext(),
+                    DrawHeightActivity.class);
+            intent.putExtra(HeightCatcher.IMAGE_LOCATION, imagePath);
+            startActivityForResult(intent, DRAW_HEIGHT_REQUEST_CODE);
+        } else
+        {
+            Log.wtf(TAG,
+                    "How did we press the launch if imagepath wasn't set?");
+        }
+
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         if (requestCode == IMAGE_REQUEST_CODE)
@@ -145,10 +173,8 @@ public class HeightCatcherActivity extends Activity
                 String capturedImageFilePath = cursor
                         .getString(column_index_data);
                 imagePath = capturedImageFilePath;
-                Intent intent = new Intent(getApplicationContext(),
-                        DrawHeightActivity.class);
-                intent.putExtra(HeightCatcher.IMAGE_LOCATION, imagePath);
-                startActivityForResult(intent, DRAW_HEIGHT_REQUEST_CODE);
+                launchDrawHeightActivity();
+                editPointsButton.setEnabled(true);
 
             }
         } else if (requestCode == DRAW_HEIGHT_REQUEST_CODE)
@@ -165,6 +191,7 @@ public class HeightCatcherActivity extends Activity
         }
     };
 
+    @SuppressWarnings("unused")
     private void debugToToastAndLog(String logMessage)
     {
         Log.d(TAG, logMessage);
@@ -282,6 +309,8 @@ public class HeightCatcherActivity extends Activity
         locationTextView = (TextView) findViewById(R.id.location_text_view);
         getLocationButton = (Button) findViewById(R.id.get_location_button);
 
+        editPointsButton = (Button) findViewById(R.id.edit_points_button);
+
         mDb = new HeightCatcherDB(getApplicationContext());
 
         ArrayList<RefObj> r = mDb.getRefObjs();
@@ -294,17 +323,19 @@ public class HeightCatcherActivity extends Activity
         referenceSpinner.setAdapter(adapter);
 
         cameraLaunchButton.setOnClickListener(cameraOnClickListener);
+        editPointsButton.setOnClickListener(editPointsListener);
         getLocationButton.setOnClickListener(getLocationListener);
         calcBMIButton.setOnClickListener(calcBMIOnClickListener);
 
     }
-    
+
     @Override
     protected void onResume()
     {
         super.onResume();
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(nameEditText.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
-        
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(nameEditText.getWindowToken(),
+                InputMethodManager.HIDE_IMPLICIT_ONLY);
+
     }
 }

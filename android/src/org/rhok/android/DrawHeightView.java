@@ -60,12 +60,6 @@ public class DrawHeightView extends View
     }
 
     private Bitmap originalBitmap;
-    private int originalWidth;
-    private int originalHeight;
-    private Canvas mCanvas;
-    private Path mPath;
-    private String mImagePath;
-
     private Paint mBitmapPaint;
 
     public DrawHeightView(Context c, AttributeSet as)
@@ -86,13 +80,12 @@ public class DrawHeightView extends View
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
 
-        mImagePath = imagePath;
         originalBitmap = getBitmapViaInSampleSize(imagePath, 4).copy(
                 Bitmap.Config.ARGB_8888, true);
-        originalHeight = originalBitmap.getHeight();
-        originalWidth = originalBitmap.getWidth();
-        mCanvas = new Canvas(originalBitmap);
-        mPath = new Path();
+        originalBitmap.getHeight();
+        originalBitmap.getWidth();
+        new Canvas(originalBitmap);
+        new Path();
         mBitmapPaint = new Paint(Paint.DITHER_FLAG);
     }
 
@@ -147,9 +140,6 @@ public class DrawHeightView extends View
         }
 
     }
-
-    private float mX, mY;
-    private static final float TOUCH_TOLERANCE = 4;
 
     // Must be between < 4 and >= 0
     public void setCoordIndex(int index)
