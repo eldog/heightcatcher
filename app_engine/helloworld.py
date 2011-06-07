@@ -218,7 +218,7 @@ class ResetPage(webapp.RequestHandler):
         r.put()            
             
 application = webapp.WSGIApplication([('/refobj', RefObjPage),
-                                      ('/person', PersonPage),
+                                      ('/', PersonPage),
                                       ('/reset', ResetPage)], debug=True)
 
 def main():
