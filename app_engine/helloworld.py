@@ -36,7 +36,7 @@ function recorddata(lat, lng, letter, col, info)
          title: info,
          icon: icon});
  
-    infowindow = new google.maps.InfoWindow({ content: name });
+    infowindow = new google.maps.InfoWindow({ content: info });
     
     (function(j)
     {
